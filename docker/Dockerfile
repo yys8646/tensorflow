@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
   vim \
   build-essential \
   cmake \
-  python3-dev \
+  python3-dev
 
 # Clone dotfiles
 RUN git clone --bare git://github.com/yys8646/dotfiles.git $HOME/.dotfiles
