@@ -13,11 +13,12 @@ done
 docker run ${REMOVE} \
            -it \
            --net host \
-           ${NAME:-"--name=tensorflow"} \
+           ${NAME:-"--name=tensorflow1.8"} \
            -e DISPLAY \
            -v=$HOME/.Xauthority:/root/.Xauthority:rw \
            -v=/tmp/.X11-unix:/tmp/.X11-unix:rw \
            --mount type=bind,source=${SOURCE:-$HOME/yys},target=${TARGET:-/yys} \
            --mount type=bind,source=/mnt/sdb1/data,target=/data \
-           yys8646/tensorflow:1.12.0-gpu-py3 \
+           --gpus all \
+           tensorflow/tensorflow:1.8.0-gpu-py3 \
            /bin/bash
